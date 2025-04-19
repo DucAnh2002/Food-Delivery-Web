@@ -1,0 +1,35 @@
+.app-download {
+    margin: auto;
+    margin-top: 100px;
+    font-size: max (3vw, 20px);
+    text-align: center;
+    font-weight: 500;
+}
+
+.app-download p {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.app-download-platforms {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    gap: max (2vw, 20px);
+    margin-top: 40px;
+}
+
+.app-download-platforms img {
+    transition: 0.5s
+}
+
+.app-download-platforms img:hover {
+    transform: scale(1.1);
+}
+
+.store {
+    font-size: 50px;
+    width: 119.656px;
+    height: 40px;
+    border-radius: 5px;
+}
