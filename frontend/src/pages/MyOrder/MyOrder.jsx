@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./MyOrder.css";
 import { StoreContext } from "../../context/StoreContext.jsx";
 import axios from "axios";
-import parcel from "A:/Source/food-delivery/frontend/src/assets/icon/parcel.png";
+import parcel from "../../assets/icon/parcel.png";
 
 const MyOrder = () => {
   const { url, token } = useContext(StoreContext);

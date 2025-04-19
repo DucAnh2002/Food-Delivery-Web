@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo2 from "/src/assets/logo2.png";
+import logo2 from "../../assets/logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedinIn,

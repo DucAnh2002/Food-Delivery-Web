@@ -1,7 +1,7 @@
 import React from "react";
 import "./AppDownload.css";
 import appStore from "/src/assets/app-store.svg";
-import googlePlay from "/src/assets/google-play.png";
+import googlePlay from "../../assets/google-play.png";
 const AppDownload = () => {
   return (
     <div className="app-download" id="app-download">
