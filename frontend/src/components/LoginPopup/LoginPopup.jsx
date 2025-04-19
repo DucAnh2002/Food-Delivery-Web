@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./LoginPopup.css";
-import cross from "A:/Source/food-delivery/frontend/src/assets/cross.png";
+import cross from "../../assets/cross.png";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 
