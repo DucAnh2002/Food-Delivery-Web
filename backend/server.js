@@ -7,23 +7,17 @@ import "dotenv/config";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 
-const corsOptions = {
-  origin: [
-    "https://food-delivery-web-fe.vercel.app",
-    "https://food-delivery-web-ochre.vercel.app",
-  ],
-  methods: "GET,POST,PUT,DELETE",
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
 // app config
 const app = express();
 const port = process.env.PORT || 4000;
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // DB connection
 connectDB();
