@@ -126,8 +126,8 @@
     .navbar .logo{
         width: 140px;
     }
-    .navbar-menu {
-        display: none;
+    .navbar-menu  {
+        display: none !important;
     }
     .navbar-right {
         
@@ -147,8 +147,8 @@
     .navbar .logo{
         width: 120px;
     }
-    .navbar-menu li{
-       display: none;
+    .navbar-menu {
+       display: none !important;
     }
     .navbar-right {
         gap: 20px;
@@ -165,8 +165,8 @@
 @media (max-width: 750px)
 {
     
-    .navbar-menu {
-        display: none;
+    .navbar-menu  {
+        display: none !important;
     }
     
 }
