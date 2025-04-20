@@ -7,7 +7,7 @@ import List from "./pages/List/List";
 import Orders from "./pages/Orders/Orders";
 import { ToastContainer } from "react-toastify";
 const App = () => {
-  const url = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+  const url = "https://food-delivery-web-59i2.onrender.com";
   return (
     <div>
       <ToastContainer />
