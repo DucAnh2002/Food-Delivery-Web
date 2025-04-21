@@ -1,5 +1,8 @@
 import React, { useContext, useState } from "react";
 import "./LoginPopup.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+
 import cross from "../../assets/cross.png";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
@@ -12,6 +15,8 @@ const LoginPopup = ({ setShowLogin }) => {
     email: "",
     password: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -72,14 +77,21 @@ const LoginPopup = ({ setShowLogin }) => {
             placeholder="Your email"
             required
           />
-          <input
-            name="password"
-            onChange={onChangeHandler}
-            value={data.password}
-            type="password"
-            placeholder="Password "
-            required
-          />
+          <div className="password-input-container">
+            <input
+              name="password"
+              onChange={onChangeHandler}
+              value={data.password}
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              required
+            />
+            <FontAwesomeIcon
+              icon={showPassword ? faEyeSlash : faEye}
+              onClick={() => setShowPassword(!showPassword)}
+              className="toggle-password-icon"
+            />
+          </div>
         </div>
         <button type="submit">
           {currState === "Sign Up" ? "Create account" : "Login"}

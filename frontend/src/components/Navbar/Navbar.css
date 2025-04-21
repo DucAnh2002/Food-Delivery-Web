@@ -120,17 +120,19 @@
     list-style: none;
     cursor: pointer;
 }
-
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #49557e;
+    padding-top: 40px;
+  }
 @media (max-width: 1050px)
 {
     .navbar .logo{
         width: 140px;
     }
-    .navbar-menu  {
-        display: none !important;
-    }
     .navbar-right {
-        
         gap: 30px;
     }
     .navbar-right img {
@@ -168,5 +170,5 @@
     .navbar-menu  {
         display: none !important;
     }
-    
 }
+

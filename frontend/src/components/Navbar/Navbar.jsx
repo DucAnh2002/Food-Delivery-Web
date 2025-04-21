@@ -19,6 +19,7 @@ const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState();
   // const { loginWithRedirect, user, logout, isAuthenticated } = useAuth0();
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navigate = useNavigate();
   const logout = () => {
@@ -35,9 +36,12 @@ const Navbar = ({ setShowLogin }) => {
     <div className="navbar">
       <Link to="/">
         <img src={logo2} alt="Logo" className="logo" />
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          <i className="fas fa-bars"></i>
+        </div>
       </Link>
 
-      <ul className="navbar-menu">
+      <ul className={`navbar-menu ${menuOpen ? "active" : ""}`}>
         <Link
           to="/"
           onClick={() => setMenu("home")}
