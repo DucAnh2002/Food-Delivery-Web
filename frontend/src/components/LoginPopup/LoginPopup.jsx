@@ -45,7 +45,7 @@ const LoginPopup = ({ setShowLogin }) => {
       } else {
         alert(response.data.message);
       }
-    } catch (error) {
+    } catch {
       alert("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
