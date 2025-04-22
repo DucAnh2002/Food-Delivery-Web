@@ -16,6 +16,7 @@ const LoginPopup = ({ setShowLogin }) => {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const onChangeHandler = (event) => {
@@ -26,20 +27,28 @@ const LoginPopup = ({ setShowLogin }) => {
 
   const onLogin = async (event) => {
     event.preventDefault();
+    setLoading(true);
     let newUrl = url;
     if (currState === "Login") {
       newUrl += "/api/user/login";
     } else {
       newUrl += "/api/user/register";
     }
-    const response = await axios.post(newUrl, data);
 
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setShowLogin(false);
-    } else {
-      alert(response.data.message);
+    try {
+      const response = await axios.post(newUrl, data);
+
+      if (response.data.success) {
+        setToken(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        setShowLogin(false);
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -93,8 +102,14 @@ const LoginPopup = ({ setShowLogin }) => {
             />
           </div>
         </div>
-        <button type="submit">
-          {currState === "Sign Up" ? "Create account" : "Login"}
+        <button type="submit" disabled={loading}>
+          {loading ? (
+            <div className="spinner"></div>
+          ) : currState === "Sign Up" ? (
+            "Create account"
+          ) : (
+            "Login"
+          )}
         </button>
         <div className="login-popup-condition">
           <input type="checkbox" required />
