@@ -36,7 +36,12 @@ const LoginPopup = ({ setShowLogin }) => {
     }
 
     try {
-      const response = await axios.post(newUrl, data);
+      const delay = new Promise((resolve) => setTimeout(resolve, 5000)); // Delay 5 giây
+
+      const response = await Promise.all([
+        axios.post(newUrl, data),
+        delay,
+      ]).then(([response]) => response);
 
       if (response.data.success) {
         setToken(response.data.token);
