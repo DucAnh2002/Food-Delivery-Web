@@ -1,0 +1,4 @@
+# env
+backend/.env
+fontend/.env
+admin/.env
