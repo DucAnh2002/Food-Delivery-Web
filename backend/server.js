@@ -15,7 +15,8 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://food-delivery-web-fe.vercel.app",
+    credentials: true,
   })
 );
 
